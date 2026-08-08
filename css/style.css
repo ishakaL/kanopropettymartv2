@@ -1,0 +1,379 @@
+/* =========================================================================
+   Kano Property Mart — style.css
+   Design language: Kano indigo-dye heritage (Kofar Mata) + editorial/print
+   masthead cues, since KPM is a real-estate MEDIA & publishing company.
+   Tailwind (CDN) handles layout utilities; this file holds everything
+   Tailwind utility classes can't express cleanly: keyframes, the dye-ring
+   motif, cutline captions, and focus/motion behaviour.
+   ========================================================================= */
+
+:root {
+    --indigo-950: #101B33;
+    --indigo-800: #1E2E56;
+    --indigo-600: #33477D;
+    --adobe-600: #B15A2B;
+    --gold-500: #C79A3D;
+    --gold-300: #E4C77A;
+    --sand-50: #FBF6EC;
+    --ink-900: #1C1A16;
+
+    --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--ink-900);
+    background-color: var(--sand-50);
+}
+
+::selection {
+    background: var(--gold-300);
+    color: var(--indigo-950);
+}
+
+/* Visible keyboard focus everywhere, always */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 2px solid var(--adobe-600);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* -------------------------------------------------------------------------
+   Dye-pit ring motif — a nod to Kano's Kofar Mata indigo dye pits.
+   Used sparingly: hero corner, section transitions, footer watermark.
+   ---------------------------------------------------------------------- */
+.dye-rings {
+    position: absolute;
+    pointer-events: none;
+    border-radius: 9999px;
+    background-image: repeating-radial-gradient(circle at center,
+            transparent 0px,
+            transparent 14px,
+            currentColor 15px,
+            currentColor 16px);
+}
+
+/* -------------------------------------------------------------------------
+   Masthead utility ticker (top bar) — thin, quiet, print-inspired
+   ---------------------------------------------------------------------- */
+.masthead-rule {
+    background-image: linear-gradient(to right,
+            transparent,
+            var(--gold-500) 15%,
+            var(--gold-500) 85%,
+            transparent);
+    height: 1px;
+}
+
+/* -------------------------------------------------------------------------
+   Hero slideshow
+   ---------------------------------------------------------------------- */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1.1s var(--ease-editorial);
+    will-change: opacity, transform;
+}
+
+.hero-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    animation: slide-pan 8s var(--ease-editorial) forwards;
+}
+
+/* Directional entrance — direction is set per-slide via data-direction,
+   read by app.js which toggles one of these classes alongside is-active. */
+.hero-slide.is-active.dir-left {
+    animation-name: enter-left, slide-pan;
+}
+
+.hero-slide.is-active.dir-right {
+    animation-name: enter-right, slide-pan;
+}
+
+.hero-slide.is-active.dir-up {
+    animation-name: enter-up, slide-pan;
+}
+
+.hero-slide.is-active.dir-down {
+    animation-name: enter-down, slide-pan;
+}
+
+@keyframes enter-left {
+    from {
+        transform: translateX(-4%) scale(1.08);
+    }
+
+    to {
+        transform: translateX(0) scale(1.08);
+    }
+}
+
+@keyframes enter-right {
+    from {
+        transform: translateX(4%) scale(1.08);
+    }
+
+    to {
+        transform: translateX(0) scale(1.08);
+    }
+}
+
+@keyframes enter-up {
+    from {
+        transform: translateY(4%) scale(1.08);
+    }
+
+    to {
+        transform: translateY(0) scale(1.08);
+    }
+}
+
+@keyframes enter-down {
+    from {
+        transform: translateY(-4%) scale(1.08);
+    }
+
+    to {
+        transform: translateY(0) scale(1.08);
+    }
+}
+
+@keyframes slide-pan {
+    0% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1.14);
+    }
+}
+
+.hero-overlay {
+    background: linear-gradient(180deg,
+            rgba(16, 27, 51, 0.55) 0%,
+            rgba(16, 27, 51, 0.72) 55%,
+            rgba(16, 27, 51, 0.92) 100%);
+}
+
+/* Editorial cutline — the small-caps caption under a photo, newspaper-style */
+.cutline {
+    position: relative;
+    padding-left: 0.9rem;
+}
+
+.cutline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    bottom: 0.2em;
+    width: 2px;
+    background: var(--gold-500);
+}
+
+/* Torn-paper divider at base of hero, reinforcing the print identity */
+.paper-edge {
+    display: block;
+    width: 100%;
+    height: 28px;
+    fill: var(--sand-50);
+}
+
+/* -------------------------------------------------------------------------
+   Scroll reveal
+   ---------------------------------------------------------------------- */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.7s var(--ease-editorial), transform 0.7s var(--ease-editorial);
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-reveal-stagger]>* {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s var(--ease-editorial), transform 0.6s var(--ease-editorial);
+}
+
+[data-reveal-stagger].is-visible>* {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(1) {
+    transition-delay: 0.02s;
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(3) {
+    transition-delay: 0.18s;
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(4) {
+    transition-delay: 0.26s;
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(5) {
+    transition-delay: 0.34s;
+}
+
+[data-reveal-stagger].is-visible>*:nth-child(6) {
+    transition-delay: 0.42s;
+}
+
+/* -------------------------------------------------------------------------
+   Service card accordion
+   ---------------------------------------------------------------------- */
+.service-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s var(--ease-editorial);
+}
+
+.service-panel>div {
+    overflow: hidden;
+}
+
+.service-card[aria-expanded="true"] .service-panel {
+    grid-template-rows: 1fr;
+}
+
+.service-card .chevron {
+    transition: transform 0.35s var(--ease-editorial);
+}
+
+.service-card[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+}
+
+.service-card {
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px -20px rgba(16, 27, 51, 0.35);
+}
+
+/* -------------------------------------------------------------------------
+   Header state
+   ---------------------------------------------------------------------- */
+#site-header {
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
+}
+
+#site-header.is-scrolled {
+    box-shadow: 0 8px 30px -18px rgba(16, 27, 51, 0.4);
+}
+
+/* Nav link underline sweep */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--gold-500);
+    transition: width 0.3s var(--ease-editorial);
+}
+
+.nav-link:hover::after,
+.nav-link.is-active::after {
+    width: 100%;
+}
+
+/* Back to top */
+#back-to-top {
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#back-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Marquee (why-choose ticker strip) */
+.marquee-track {
+    animation: marquee 32s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Form field state */
+.form-field:invalid[data-touched="true"] {
+    border-color: #B3413B;
+}
+
+.form-status {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* -------------------------------------------------------------------------
+   Reduced motion — honour user preference across the board
+   ---------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .hero-slide.is-active,
+    .hero-slide.is-active.dir-left,
+    .hero-slide.is-active.dir-right,
+    .hero-slide.is-active.dir-up,
+    .hero-slide.is-active.dir-down {
+        animation: none !important;
+        transform: none !important;
+    }
+
+    [data-reveal],
+    [data-reveal-stagger]>* {
+        transition: opacity 0.3s linear !important;
+        transform: none !important;
+    }
+
+    .marquee-track {
+        animation: none !important;
+    }
+}
