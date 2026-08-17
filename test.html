@@ -22,3 +22,133 @@
                     </div>
                 </div>
             </div>
+
+
+
+
+
+            //Header
+            <head>
+                <meta charset="UTF-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <title>Kano Property Mart — Real Estate Media, Marketing &amp; Research</title>
+                <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+                <meta name="description"
+                    content="Kano Property Mart (KPM) is a leading real estate media, marketing and research platform promoting transparency, professionalism and sustainable growth in Nigeria's real estate sector." />
+            
+                <!-- Fonts: Newsreader (editorial serif) + Inter (body/UI) + IBM Plex Mono (utility labels) -->
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap"
+                    rel="stylesheet" />
+            
+                <!-- Tailwind CSS (CDN) with custom Kano-inspired theme tokens -->
+                <script src="https://cdn.tailwindcss.com"></script>
+                <script>
+                    tailwind.config = {
+                        theme: {
+                            extend: {
+                                colors: {
+                                    indigo: { 400: '#6577A6', 600: '#33477D', 800: '#1E2E56', 950: '#101B33' },
+                                    adobe: { 600: '#B15A2B', 700: '#8F4620' },
+                                    gold: { 300: '#E4C77A', 500: '#C79A3D' },
+                                    sand: { 50: '#FBF6EC', 100: '#F2E8D3' },
+                                    ink: { 400: '#948C7E', 600: '#58524A', 900: '#1C1A16' },
+                                },
+                                fontFamily: {
+                                    serif: ['Newsreader', 'serif'],
+                                    sans: ['Inter', 'sans-serif'],
+                                    mono: ['"IBM Plex Mono"', 'monospace'],
+                                },
+                            },
+                        },
+                    };
+                </script>
+            
+                <link rel="stylesheet" href="css/style.css" />
+            </head>
+            
+            <body class="bg-sand-50 text-ink-900 font-sans antialiased">
+            
+                <!-- Skip link -->
+                <a href="#main"
+                    class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-indigo-950 focus:text-sand-50 focus:px-4 focus:py-2 focus:rounded">Skip
+                    to content</a>
+            
+                <!-- =========================================================
+                 HEADER / MASTHEAD
+                 ========================================================= -->
+            
+                <!-- Utility bar -->
+                <div class="hidden md:block bg-indigo-950 text-sand-50/80 text-xs">
+                    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-1.5 font-mono tracking-wide">
+                        <p>KANO, NIGERIA &middot; REAL ESTATE MEDIA &amp; INVESTMENT INTELLIGENCE</p>
+                        <div class="flex items-center gap-4">
+                            <a href="mailto:kanopropertymart@gmail.com"
+                                class="hover:text-gold-300 transition-colors">kanopropertymart@gmail.com</a>
+                            <span class="text-sand-50/30">|</span>
+                            <a href="tel:+2349139962266" class="hover:text-gold-300 transition-colors">+234 9139962266</a>
+                            <span class="text-sand-50/30">|</span>
+                            <a href="tel:+2348162934937" class="hover:text-gold-300 transition-colors">+234 8162934937</a>
+            
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="masthead-rule"></div>
+            
+                <!-- Main nav -->
+                <nav class="bg-sand-50 py-4 transition-colors" aria-label="Primary">
+                    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                        <a href="#home" class="flex items-center group">
+                            <img src="images/logo.jpeg" alt="Kano Property Mart" class="h-14 md:h-16 w-auto object-contain">
+                        </a>
+                        <span class="font-mono text-[0.6rem] tracking-[0.25em] text-adobe-600 uppercase mt-1">Media &middot;
+                            Marketing &middot; Research</span>
+                        </a>
+            
+                        <ul class="hidden lg:flex items-center gap-9 font-medium text-sm text-ink-900">
+                            <li><a href="#home" class="nav-link is-active pb-1">Home</a></li>
+                            <li><a href="#about" class="nav-link pb-1">About Us</a></li>
+                            <li><a href="#services" class="nav-link pb-1">Our Services</a></li>
+                            <li><a href="#why-choose" class="nav-link pb-1">Why Choose Us</a></li>
+                            <li><a href="#contact" class="nav-link pb-1">Contact Us</a></li>
+                        </ul>
+            
+                        <a href="#contact"
+                            class="hidden lg:inline-flex items-center gap-2 bg-adobe-600 hover:bg-adobe-700 text-sand-50 text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors">
+                            Get In Touch
+                        </a>
+            
+                        <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
+                            class="lg:hidden p-2 text-indigo-950" aria-label="Toggle menu">
+                            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                                stroke-linecap="round">
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <line x1="3" y1="12" x2="21" y2="12" />
+                                <line x1="3" y1="18" x2="21" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+            
+                    <!-- Mobile menu -->
+                    <div id="mobile-menu" class="hidden lg:hidden mt-4 px-6 border-t border-ink-900/10 pt-4">
+                        <ul class="flex flex-col gap-4 font-medium text-ink-900">
+                            <li><a href="#home" class="block py-1">Home</a></li>
+                            <li><a href="#about" class="block py-1">About Us</a></li>
+                            <li><a href="#services" class="block py-1">Our Services</a></li>
+                            <li><a href="#why-choose" class="block py-1">Why Choose Us</a></li>
+                            <li><a href="#contact" class="block py-1">Contact Us</a></li>
+                            <li><a href="#contact"
+                                    class="inline-flex mt-1 items-center gap-2 bg-adobe-600 text-sand-50 text-sm font-semibold px-5 py-2.5 rounded-sm w-fit">Get
+                                    In Touch</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                </header>
+
+
+
+

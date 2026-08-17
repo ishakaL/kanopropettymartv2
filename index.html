@@ -53,73 +53,196 @@
      HEADER / MASTHEAD
      ========================================================= -->
   
+    <!-- =========================================================
+         HEADER / MASTHEAD
+         ========================================================= -->
+    
     <!-- Utility bar -->
     <div class="hidden md:block bg-indigo-950 text-sand-50/80 text-xs">
-        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-1.5 font-mono tracking-wide">
-            <p>KANO, NIGERIA &middot; REAL ESTATE MEDIA &amp; INVESTMENT INTELLIGENCE</p>
-            <div class="flex items-center gap-4">
-                <a href="mailto:kanopropertymart@gmail.com"
-                    class="hover:text-gold-300 transition-colors">kanopropertymart@gmail.com</a>
-                <span class="text-sand-50/30">|</span>
-                <a href="tel:+2349139962266" class="hover:text-gold-300 transition-colors">+234 9139962266</a>
-                <span class="text-sand-50/30">|</span>
-                <a href="tel:+2348162934937" class="hover:text-gold-300 transition-colors">+234 8162934937</a>
+        <div class="max-w-7xl mx-auto px-6 flex items-center justify-between py-2 font-mono tracking-wide">
     
+            <!-- Company location / identity -->
+            <p class="whitespace-nowrap">
+                KANO, NIGERIA &middot; REAL ESTATE MEDIA &amp; INVESTMENT INTELLIGENCE
+            </p>
+    
+            <!-- Contact information -->
+            <div class="flex items-center gap-4 whitespace-nowrap">
+                <a href="mailto:kanopropertymart@gmail.com" class="hover:text-gold-300 transition-colors">
+                    kanopropertymart@gmail.com
+                </a>
+    
+                <span class="text-sand-50/30">|</span>
+    
+                <a href="tel:+2349139962266" class="hover:text-gold-300 transition-colors">
+                    +234 913 996 2266
+                </a>
+    
+                <span class="text-sand-50/30">|</span>
+    
+                <a href="tel:+2348162934937" class="hover:text-gold-300 transition-colors">
+                    +234 816 293 4937
+                </a>
             </div>
         </div>
     </div>
-     
-
-        <div class="masthead-rule"></div>
-
-        <!-- Main nav -->
-        <nav class="bg-sand-50 py-4 transition-colors" aria-label="Primary">
-            <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-                <a href="#home" class="flex items-center group">
-                    <img src="images/logo.jpeg" alt="Kano Property Mart" class="h-14 md:h-16 w-auto object-contain">
+    
+    
+    <!-- Main Navigation -->
+    <nav class="bg-sand-50 border-b border-ink-900/10" aria-label="Primary Navigation">
+    
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+    
+            <div class="min-h-[88px] flex items-center justify-between gap-8">
+    
+                <!-- =========================
+                     LOGO / BRAND
+                     ========================= -->
+                <a href="#home" class="flex items-center shrink-0 group" aria-label="Kano Property Mart Home">
+    
+                    <img src="images/logo.jpeg" alt="Kano Property Mart"
+                        class="h-12 sm:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]">
+    
                 </a>
-                    <span class="font-mono text-[0.6rem] tracking-[0.25em] text-adobe-600 uppercase mt-1">Media &middot;
-                        Marketing &middot; Research</span>
-                </a>
-
-                <ul class="hidden lg:flex items-center gap-9 font-medium text-sm text-ink-900">
-                    <li><a href="#home" class="nav-link is-active pb-1">Home</a></li>
-                    <li><a href="#about" class="nav-link pb-1">About Us</a></li>
-                    <li><a href="#services" class="nav-link pb-1">Our Services</a></li>
-                    <li><a href="#why-choose" class="nav-link pb-1">Why Choose Us</a></li>
-                    <li><a href="#contact" class="nav-link pb-1">Contact Us</a></li>
+    
+    
+                <!-- =========================
+                     DESKTOP NAVIGATION
+                     ========================= -->
+                <ul class="hidden lg:flex items-center justify-center gap-7 xl:gap-9
+                           font-medium text-sm text-ink-900 flex-1">
+    
+                    <li>
+                        <a href="#home" class="nav-link is-active pb-2">
+                            Home
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#about" class="nav-link pb-2">
+                            About Us
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#services" class="nav-link pb-2">
+                            Our Services
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#why-choose" class="nav-link pb-2">
+                            Why Choose Us
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#contact" class="nav-link pb-2">
+                            Contact Us
+                        </a>
+                    </li>
+    
                 </ul>
-
-                <a href="#contact"
-                    class="hidden lg:inline-flex items-center gap-2 bg-adobe-600 hover:bg-adobe-700 text-sand-50 text-sm font-semibold px-5 py-2.5 rounded-sm transition-colors">
+    
+    
+                <!-- =========================
+                     CALL TO ACTION
+                     ========================= -->
+                <a href="#contact" class="hidden lg:inline-flex shrink-0 items-center justify-center
+                          bg-adobe-600 hover:bg-adobe-700
+                          text-sand-50 text-sm font-semibold
+                          px-5 xl:px-6 py-3
+                          rounded-sm
+                          shadow-sm
+                          transition-all duration-300
+                          hover:shadow-md">
+    
                     Get In Touch
+    
                 </a>
-
+    
+    
+                <!-- =========================
+                     MOBILE MENU BUTTON
+                     ========================= -->
                 <button id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu"
-                    class="lg:hidden p-2 text-indigo-950" aria-label="Toggle menu">
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                    class="lg:hidden p-2 text-indigo-950 hover:text-adobe-600 transition-colors"
+                    aria-label="Toggle navigation menu">
+    
+                    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                         stroke-linecap="round">
+    
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <line x1="3" y1="12" x2="21" y2="12" />
                         <line x1="3" y1="18" x2="21" y2="18" />
+    
                     </svg>
+    
                 </button>
+    
             </div>
-
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden lg:hidden mt-4 px-6 border-t border-ink-900/10 pt-4">
-                <ul class="flex flex-col gap-4 font-medium text-ink-900">
-                    <li><a href="#home" class="block py-1">Home</a></li>
-                    <li><a href="#about" class="block py-1">About Us</a></li>
-                    <li><a href="#services" class="block py-1">Our Services</a></li>
-                    <li><a href="#why-choose" class="block py-1">Why Choose Us</a></li>
-                    <li><a href="#contact" class="block py-1">Contact Us</a></li>
-                    <li><a href="#contact"
-                            class="inline-flex mt-1 items-center gap-2 bg-adobe-600 text-sand-50 text-sm font-semibold px-5 py-2.5 rounded-sm w-fit">Get
-                            In Touch</a></li>
+    
+    
+            <!-- =========================
+                 MOBILE MENU
+                 ========================= -->
+            <div id="mobile-menu" class="hidden lg:hidden border-t border-ink-900/10 py-5">
+    
+                <ul class="flex flex-col gap-1 font-medium text-ink-900">
+    
+                    <li>
+                        <a href="#home"
+                            class="block px-3 py-3 rounded-sm hover:bg-sand-100 hover:text-adobe-600 transition-colors">
+                            Home
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#about"
+                            class="block px-3 py-3 rounded-sm hover:bg-sand-100 hover:text-adobe-600 transition-colors">
+                            About Us
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#services"
+                            class="block px-3 py-3 rounded-sm hover:bg-sand-100 hover:text-adobe-600 transition-colors">
+                            Our Services
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#why-choose"
+                            class="block px-3 py-3 rounded-sm hover:bg-sand-100 hover:text-adobe-600 transition-colors">
+                            Why Choose Us
+                        </a>
+                    </li>
+    
+                    <li>
+                        <a href="#contact"
+                            class="block px-3 py-3 rounded-sm hover:bg-sand-100 hover:text-adobe-600 transition-colors">
+                            Contact Us
+                        </a>
+                    </li>
+    
+                    <li class="pt-3">
+                        <a href="#contact" class="inline-flex items-center justify-center
+                                  bg-adobe-600 hover:bg-adobe-700
+                                  text-sand-50
+                                  text-sm font-semibold
+                                  px-5 py-3 rounded-sm
+                                  transition-colors">
+                            Get In Touch
+                        </a>
+                    </li>
+    
                 </ul>
+    
             </div>
-        </nav>
+    
+        </div>
+    
+    </nav>
     </header>
 
     <main id="main">
@@ -1270,6 +1393,27 @@
                                             d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.3C16.24 4.27 15.36 4.2 14.34 4.2c-2.14 0-3.6 1.3-3.6 3.7v2.6H8.3v3h2.44V21h2.76Z" />
                                     </svg>
                                 </a>
+                            <a href="#" aria-label="Kano Property Mart on WhatsApp"
+                                class="w-9 h-9 grid place-items-center border border-sand-50/25 rounded-full hover:border-gold-300 hover:text-gold-300 transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12.04 2C6.52 2 2.03 6.49 2.03 12c0 1.76.46 3.48 1.34 5.02L2 22l5.13-1.34A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.51 22 12S17.56 2 12.04 2Zm0 18.2c-1.55 0-3.06-.42-4.39-1.22l-.31-.19-3.05.8.82-2.97-.2-.31A8.2 8.2 0 1 1 12.04 20.2Zm4.49-6.16c-.25-.13-1.49-.74-1.72-.82-.23-.08-.4-.13-.57.13-.17.25-.65.82-.8.99-.15.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.39.11-.52.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.43 1.02 2.6c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.44.54.61.19 1.16.16 1.6.1.49-.07 1.49-.61 1.7-1.2.21-.59.21-1.09.15-1.2-.06-.1-.23-.17-.48-.29Z" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Kano Property Mart on TikTok"
+                                class="w-9 h-9 grid place-items-center border border-sand-50/25 rounded-full hover:border-gold-300 hover:text-gold-300 transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.77h-3.12v13.6a2.88 2.88 0 1 1-2-2.75V10.6a6.04 6.04 0 1 0 5.12 5.92V9.74a7.9 7.9 0 0 0 4.62 1.49V8.11a4.82 4.82 0 0 1-.85-.08Z" />
+                                </svg>
+                            </a>
+                            <a href="#" aria-label="Kano Property Mart on YouTube"
+                                class="w-9 h-9 grid place-items-center border border-sand-50/25 rounded-full hover:border-gold-300 hover:text-gold-300 transition-colors">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.51 3.5 12 3.5 12 3.5s-7.51 0-9.38.57A3.01 3.01 0 0 0 .5 6.2 31.2 31.2 0 0 0 0 12a31.2 31.2 0 0 0 .5 5.8 3.01 3.01 0 0 0 2.12 2.13c1.87.57 9.38.57 9.38.57s7.51 0 9.38-.57a3.01 3.01 0 0 0 2.12-2.13A31.2 31.2 0 0 0 24 12a31.2 31.2 0 0 0-.5-5.8ZM9.6 15.9V8.1l6.5 3.9-6.5 3.9Z" />
+                                </svg>
+                            </a>
                             </div>
                         </div>
 
